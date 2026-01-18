@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ACCESS // TERMINAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="scanlines"></div>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="status-light"></span>
+            <span id="terminal-title">ROOT@ACCESS:~$ ./login.sh</span>
+        </div>
+
+        <div class="screen-content">
+
+            <div id="signin-box" class="form-box active-box">
+                <div class="boot-sequence">
+                    <p>> INITIATING LOGIN PROTOCOL...</p>
+                    <p>> AWAITING CREDENTIALS...</p>
+                </div>
+                <form class="terminal-form">
+                    <div class="input-group boot-item delay-1">
+                        <label for="si-user">usr_id ></label>
+                        <input type="text" id="si-user" autocomplete="off" spellcheck="false">
+                    </div>
+                    <div class="input-group boot-item delay-2">
+                        <label for="si-pass">passwd ></label>
+                        <input type="password" id="si-pass">
+                    </div>
+                    <button type="button" class="cyber-button boot-item delay-3">
+                        <span class="btn-text">>> EXECUTE LOGIN</span>
+                        <span class="glitch-effect"></span>
+                    </button>
+                </form>
+                <div class="switch-prompt boot-item delay-4">
+                    <p>New user detected? <a href="#" id="to-signup">./run_signup.sh</a></p>
+                </div>
+            </div>
+
+            <div id="signup-box" class="form-box">
+    
+                <div id="signup-step-1" class="step-container">
+                    <div class="boot-sequence">
+                        <p>> CREATING NEW USER NODE...</p>
+                        <p>> ALLOCATING RESOURCES...</p>
+                    </div>
+                    <form class="terminal-form">
+                        <div class="input-group boot-item delay-1">
+                            <label for="su-email">email_addr ></label>
+                            <input type="email" id="su-email" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="input-group boot-item delay-2">
+                            <label for="su-user">assign_usr ></label>
+                            <input type="text" id="su-user" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="input-group boot-item delay-3">
+                            <label for="su-pass">set_passwd ></label>
+                            <input type="password" id="su-pass">
+                        </div>
+                        <button type="button" id="btn-init-account" class="cyber-button boot-item delay-4">
+                            <span class="btn-text">>> INITIALIZE ACCOUNT</span>
+                            <span class="glitch-effect"></span>
+                        </button>
+                    </form>
+                    <div class="switch-prompt boot-item delay-5">
+                        <p>Already registered? <a href="#" id="to-signin">./return_login.sh</a></p>
+                    </div>
+                </div>
+            
+                <div id="signup-step-2" class="step-container hidden-step">
+                    <div class="boot-sequence">
+                        <p class="alert-text">> SECURITY PROTOCOL ACTIVATED</p>
+                        <p>> 2FA_TOKEN_REQUIRED...</p>
+                    </div>
+                    <div class="otp-display-area">
+                        <p class="instruction">>> PACKET SENT TO EMAIL_NODE</p>
+                        <form class="terminal-form">
+                            <div class="input-group boot-item delay-1">
+                                <label for="otp-code">auth_token ></label>
+                                <input type="text" id="otp-code" maxlength="6" autocomplete="off" placeholder="_ _ _ _ _ _">
+                            </div>
+                            
+                            <div class="otp-timer boot-item delay-2">
+                                <span>TOKEN_EXPIRY: </span><span id="timer-countdown">120s</span>
+                            </div>
+            
+                            <button type="button" id="btn-verify-otp" class="cyber-button boot-item delay-3">
+                                <span class="btn-text">>> DECRYPT & VERIFY</span>
+                                <span class="glitch-effect"></span>
+                            </button>
+                        </form>
+                        <div class="switch-prompt boot-item delay-4">
+                            <p>Packet lost? <a href="#" id="resend-otp">./resend_packet.sh</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="terminal-loader hidden">
+                <div data-glitch="INITIALIZING CONNECTION..." class="glitch-text">INITIALIZING CONNECTION...</div>
+                <div class="progress-bar">
+                    <div class="bar-fill"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
